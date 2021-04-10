@@ -27,7 +27,6 @@ class bot:
         company_search_dropdown = '//*[@id="ui-id-1"]' #/li'
         self.clickButton(company_search_dropdown)
         
-
     def get_esg_ratings(self):
         esg_ratings_xpath = '//*[@id="_esgratingsprofile_esg-rating-history"]'
         esg_data = self.grabData(esg_ratings_xpath)
@@ -63,10 +62,3 @@ class bot:
         data = self.get_esg_ratings().get_attribute('innerHTML')
         self.driver.quit()
         return data
-
-
-def scrapy_esg_bot(ticker_symbol):
-    #data = bot(ticker_symbol).initializeScrapeProcess()
-    webscrape_bot = bot(ticker_symbol)
-    webscrape_bot.initializeScrapeProcess()
-    return data
