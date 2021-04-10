@@ -66,6 +66,7 @@ class bot:
 
 
 def scrapy_esg_bot(ticker_symbol):
+    #data = bot(ticker_symbol).initializeScrapeProcess()
     webscrape_bot = bot(ticker_symbol)
     webscrape_bot.initializeScrapeProcess()
     return data
