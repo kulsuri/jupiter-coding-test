@@ -1,0 +1,4 @@
+selenium
+yfinance
+pandas
+time
