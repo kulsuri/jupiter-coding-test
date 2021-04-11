@@ -93,11 +93,17 @@ http://localhost:5000/
 
 # Feature Requests and Improvements
 :black_square_button: More ESG data sources
+
 :black_square_button: Apply non-numerical elements to the ESG scores on the graphs
+
 :black_square_button:	Improve response times
+
 :black_square_button:	Resolve caching issues preventing new graphs to be displayed
+
 :black_square_button:	Add data validation and error handling
+
 :black_square_button: Create unit tests and integration tests
+
 :black_square_button:	Build CI/CD pipeline
 
 
