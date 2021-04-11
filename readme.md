@@ -69,6 +69,15 @@ http://localhost:5000/
 
 # How Does It Work?
 
+File | Technology | What Does It Do
+--- | --- | ---
+`app.py` | flask | runs the app, handles routes, renders templates and calls objects from the other files
+`get_esg_score.py` | selenium | scrapes data from the [MSCI ESG Ratings Corporate Search Tool](https://www.msci.com/our-solutions/esg-investing/esg-ratings/esg-ratings-corporate-search-tool/issuer/) website
+`transform.py` | regex | performs transformations on the raw html to retrieve company ESG scores as well as the corresponding dates those score were given
+`get_stock_price.py` | yfinance | gets historical stock price data for the company
+`create_pandas_df.py` | pandas | merges the two data sources into a single dataframe
+`visualisation_engine.py` | matplotlib | assigns a numerical mapping to the ESG scores and plots these against the stock price
+
 - get_stock_price.py # get stock price data
 - get_esg_scores.py # get ESG scores for stock price from MSCI
 - transform_the_data.py # transform data and create data frame
