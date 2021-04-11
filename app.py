@@ -36,4 +36,4 @@ def web_scraper(ticker_symbol):
 # data4 = visualisationEngine(data3).initializePlot()
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1')
+    app.run(threaded=True, port=5000)
