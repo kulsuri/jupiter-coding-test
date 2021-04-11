@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block content %}
+
+    <div class="row">
+        {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+        {% endfor %}
+    </div>
+    
+    {% endfor %}
+{% endblock %}
