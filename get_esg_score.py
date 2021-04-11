@@ -17,6 +17,8 @@ class bot:
         self.chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
         self.driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=self.chrome_options)
         ###
+        
+        #self.driver = webdriver.Chrome(os.path.join(os.getcwd(), 'chromedriver_win32\chromedriver.exe'), options=self.chrome_options)
         self.driver.get('https://www.msci.com/our-solutions/esg-investing/esg-ratings/esg-ratings-corporate-search-tool/issuer/')
 
     def accept_cookies(self):
