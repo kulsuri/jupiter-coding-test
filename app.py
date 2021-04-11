@@ -13,20 +13,22 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['POST', "GET"])
 def my_form_post():
     ticker = request.form['text']
     if ticker != "":
         df = web_scraper(ticker)
-        return html_table(df)
+        return display_data(df)
     else:
         return render_template("index.html")
 
-@app.route('/', methods=("POST", "GET"))
-def html_table(df):
-    return render_template('simple.html',  tables=[df.to_html(classes='data')], titles=df.columns.values)
+# @app.route('/', methods=("POST", "GET"))
+# def html_table(df):
+#     return render_template('simple.html',  tables=[df.to_html(classes='data')], titles=df.columns.values)
 
-#ticker_symbol = 'jpm'
+def display_data(df):
+    #return render_template("data.html", tables=[df.to_html(classes='data')], titles=df.columns.values)
+    return render_template("data.html", column_names=df.columns.values, row_data=list(df.values.tolist())
 
 def web_scraper(ticker_symbol):
     data1 = bot(ticker_symbol).initializeScrapeProcess()
