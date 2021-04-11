@@ -88,6 +88,7 @@ http://localhost:5000/
 
 # Bugs and Issues
 :x: Sometimes graphs fail to render due to browser caching handling
+
 :x: Response times are slower than desired due to data scraping method using selenium (despite optimizations)
 
 # Feature Requests and Improvements
