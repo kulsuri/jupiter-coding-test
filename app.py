@@ -6,6 +6,7 @@ from visualisation_engine import visualisationEngine
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.config["CACHE_TYPE"] = "null"
 
 @app.route('/')
@@ -21,8 +22,17 @@ def my_form_post():
     else:
         return render_template("index.html")
 
+# No caching at all for API endpoints.
+# @app.after_request
+# def add_header(response):
+#     # response.cache_control.no_store = True
+#     response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0'
+#     response.headers['Pragma'] = 'no-cache'
+#     response.headers['Expires'] = '-1'
+#     return response
+
 def display_data(df):
-    return render_template("data.html", tables=[df.to_html(classes='data')], titles=df.columns.values, user_image = 'static/my_plot.png') # user_image = 'my_plot.png')
+    return render_template("data.html", tables=[df.to_html(classes='data')], titles=df.columns.values, user_image = 'static/my_plot.png')
 
 def web_scraper(ticker_symbol):
     data1 = bot(ticker_symbol).initializeScrapeProcess()
