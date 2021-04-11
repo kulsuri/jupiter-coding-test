@@ -1,28 +1,29 @@
-### esg-web-scraper
+# esg-web-scraper
 https://esg-web-scraper.herokuapp.com/
 
 Is there a correlation between the ESG rating and the stock price for a company?
+![screengrab](https://media.giphy.com/media/yRx7YJn3sn3lSexn19/giphy.gif)
 
-### What Does This App Do?
+# What Does This App Do?
 1. Scrapes ESG data from the [MSCI ESG Ratings Corporate Search Tool](https://www.msci.com/our-solutions/esg-investing/esg-ratings/esg-ratings-corporate-search-tool/issuer/)
-   - Using selenium in headless mode with the website being dynamic and the data stored in a SVG
+- Using selenium in headless mode with the website being dynamic and the data stored in a SVG
 2. Performs transformations on the ESG data to retrieve company ESG scores as well as the corresponding dates those score were given
-    - Using regex to filter raw html
+- Using regex to filter raw html
 3. Grabs historical stock price data for the company
-   - Using the yfinance API
+- Using the yfinance API
 4. Merges the two data sources into a single dataframe
-   - Using pandas data manipulation methods
+- Using pandas data manipulation methods
 5. Plots ESG scores against stock price
-   - Using the matplotlib module
+- Using the matplotlib module
 6. Delivered to the user via a nice(ish), interactable website
-   - Using flask to render the html and control GET and POST requests
+- Using flask to render the html and control GET and POST requests
 
-### Pre-requisites
+# Pre-requisites
 - Python 3
 - Pip
 - Git
 
-### Installation Instructions
+# Installation Instructions
 The app is hosted online at: https://esg-web-scraper.herokuapp.com/
 
 ... but for those wanting to run locally:
@@ -32,7 +33,7 @@ The app is hosted online at: https://esg-web-scraper.herokuapp.com/
 ```
 cd C:\project
 ```
-3. Clone repo (note: this clones the **run-app-locally branch**, as master is configured slightly differently for CI and cloud deployment)
+1. Clone repo (note: this clones the **run-app-locally** branch)
 ```
 git clone -b run-app-locally https://github.com/kulsuri/jupiter-coding-test
 ```
@@ -44,17 +45,19 @@ cd C:\project\jupiter-coding-test
 ```
 pip install -r requirements.txt 
 ```
-6. Run the app
+
+# Running the App
+1. Navigate to the project folder and run the command:
 ```
 python app.py
 ```
-7. Open the web browser and open http://localhost:5000/
+2. Open the web browser and open:
 ```
 http://localhost:5000/
 ```
 
 # Technologies
-- python
+- python 3
 - selenium
 - flask
 - yfinance
@@ -71,13 +74,7 @@ http://localhost:5000/
 - insert_data_to_sql_db.py # insert the scraped data into the sql lite database
 - app.py # run the flask app / control routes / call python modules
 
-# Running the App
-1. Run the command: 
-```
-python app.py
-```
-2. Use an application like Postman to make GET/POST requests
-- Note: if you want a new empty database, please delete the urls.db and re-run app.py in step 1 
+
 
 # Shorten URL Example - POST Request
 - Request type:
