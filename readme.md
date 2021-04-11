@@ -78,13 +78,6 @@ File | Technology | What Does It Do
 `create_pandas_df.py` | pandas | merges the two data sources into a single dataframe
 `visualisation_engine.py` | matplotlib | assigns a numerical mapping to the ESG scores and plots these against the stock price
 
-- get_stock_price.py # get stock price data
-- get_esg_scores.py # get ESG scores for stock price from MSCI
-- transform_the_data.py # transform data and create data frame
-- create_sql_lite_db.py # create the sql lite database
-- insert_data_to_sql_db.py # insert the scraped data into the sql lite database
-- app.py # run the flask app / control routes / call python modules
-
 # Loading Data to Relational DB
 1. Import SQLAlchemy and create a sqllite db
 - This will be our (mini) data warehouse
