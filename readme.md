@@ -3,6 +3,7 @@ https://esg-web-scraper.herokuapp.com/
 
 Is there a correlation between the ESG rating and the stock price for a company?
 
+# Screenshot
 ![screengrab](https://media.giphy.com/media/yRx7YJn3sn3lSexn19/giphy.gif)
 
 # What Does This App Do?
@@ -47,7 +48,7 @@ cd C:\project\jupiter-coding-test
 pip install -r requirements.txt 
 ```
 
-# Running the App
+# Run the App
 1. Navigate to the project folder and run the command:
 ```
 python app.py
@@ -75,18 +76,27 @@ http://localhost:5000/
 - insert_data_to_sql_db.py # insert the scraped data into the sql lite database
 - app.py # run the flask app / control routes / call python modules
 
-# Loadin Data to Relational DB
-- Request type:
+# Loading Data to Relational DB
+1. Import SQLAlchemy and create a sqllite db
+- This will be our (mini) data warehouse
+1. Create/insert tables with the below schema using 3NF and snowflake principles
+<a href="https://ibb.co/QfrhW6w"><img src="https://i.ibb.co/SPRHkKC/schema.png" alt="schema" border="0"></a><br /><a target='_blank' href='https://the-crosswordsolver.com/tag/presuppose'></a><br />
+3. In the ETL process, create dataframes which match the schema of the sql database
+4. Open a connection to the database
+5. Use pandas to_sql() function to write records stored in the dataframe to the sql database
+6. Close the connection to the database
 
 # Bugs and Issues
+:x: Sometimes graphs fail to render due to browser caching handling
+:x: Response times are slower than desired due to data scraping method using selenium (despite optimizations)
 
-The solution allows for scaling due to:
-- suitable error handling
-- url validation reducing computational expense
-- url normalization/formatting to prevent replication in the database
-- built with functional programming in mind
-- shortened urls are stored in a sqlite database, separate to the code, for fast retrieval 
+# Feature Requests and Improvements
+:black_square_button: More ESG data sources
+:black_square_button: Apply non-numerical elements to the ESG scores on the graphs
+:black_square_button:	Improve response times
+:black_square_button:	Resolve caching issues preventing new graphs to be displayed
+:black_square_button:	Add data validation and error handling
+:black_square_button: Create unit tests and integration tests
+:black_square_button:	Build CI/CD pipeline
 
-How I would scale the app:
-- run the application on a proper web server such as Apache or Nginx that supports execution of python
-- these will easily handle many simultaneous connections
+
