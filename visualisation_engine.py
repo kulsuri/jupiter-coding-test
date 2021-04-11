@@ -29,4 +29,5 @@ class visualisationEngine:
     def initializePlot(self):
         df = self.assign_num_val_to_esg_scores()
         viz = self.plot_df(df)
-        return plt.show()
+        plot_img = viz.figure.savefig('static/my_plot.png')
+        return plot_img
