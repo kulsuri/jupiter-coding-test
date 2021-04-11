@@ -22,7 +22,7 @@ def my_form_post():
         return render_template("index.html")
 
 def display_data(df):
-    return render_template("data.html", tables=[df.to_html(classes='data')], titles=df.columns.values, user_image = 'static/my_plot.png')
+    return render_template("data.html", tables=[df.to_html(classes='data')], titles=df.columns.values) #, user_image = 'static/my_plot.png')
 
 def web_scraper(ticker_symbol):
     data1 = bot(ticker_symbol).initializeScrapeProcess()
