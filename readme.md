@@ -2,6 +2,7 @@
 https://esg-web-scraper.herokuapp.com/
 
 Is there a correlation between the ESG rating and the stock price for a company?
+
 ![screengrab](https://media.giphy.com/media/yRx7YJn3sn3lSexn19/giphy.gif)
 
 # What Does This App Do?
@@ -33,7 +34,7 @@ The app is hosted online at: https://esg-web-scraper.herokuapp.com/
 ```
 cd C:\project
 ```
-1. Clone repo (note: this clones the **run-app-locally** branch)
+3. Clone repo (note: this clones the **run-app-locally** branch)
 ```
 git clone -b run-app-locally https://github.com/kulsuri/jupiter-coding-test
 ```
@@ -51,7 +52,7 @@ pip install -r requirements.txt
 ```
 python app.py
 ```
-2. Open the web browser and open:
+2. In the web browser, open:
 ```
 http://localhost:5000/
 ```
@@ -65,7 +66,7 @@ http://localhost:5000/
 - pandas
 - regex
 
-### File Structure
+# How Does It Work?
 
 - get_stock_price.py # get stock price data
 - get_esg_scores.py # get ESG scores for stock price from MSCI
@@ -74,86 +75,11 @@ http://localhost:5000/
 - insert_data_to_sql_db.py # insert the scraped data into the sql lite database
 - app.py # run the flask app / control routes / call python modules
 
-
-
-# Shorten URL Example - POST Request
+# Loadin Data to Relational DB
 - Request type:
-```
-POST
-```
-- URL: 
-```
-localhost:5000/shorten_url
-```
-- Headers: 
-```
-{'Content-Type': 'application/json'}
-```
-- Body: 
-```
-{'url': 'www.babylonhealth.com'}
-``` 
-- Response: 
-```
-{"shortened_url": "http://localhost:5000/25t52"}
-```
 
-# Redirect Example - GET Request
-- Request type:
-```
-GET
-```
-- URL: 
-```
-localhost:5000/25t52
-```
-- Response: redirected to the the original URL (http://babylonhealth.com) / returned the contents of the original URL
+# Bugs and Issues
 
-# View SQLite Database - GET Request
-- Request type:
-```
-GET
-```
-- URL: 
-```
-localhost:5000
-```
-- Response:
-```
-[
-  [
-    1, 
-    "http://w3.com", 
-    "867nv"
-  ], 
-  [
-    2, 
-    "http://babylonhealth.com", 
-    "25t52"
-  ], 
-  [
-    3, 
-    "http://google.com", 
-    "ghpzy"
-  ], 
-  [
-    4, 
-    "http://theverge.com", 
-    "6vyv6"
-  ], 
-  [
-    5, 
-    "http://hotukdeals.com", 
-    "pbq8b"
-  ], 
-  [
-    6, 
-    "http://youtube.com", 
-    "4xct4"
-  ]
-]
-```
-# Scaling
 The solution allows for scaling due to:
 - suitable error handling
 - url validation reducing computational expense
