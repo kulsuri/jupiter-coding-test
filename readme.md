@@ -81,7 +81,7 @@ File | Technology | What Does It Do
 # Loading Data to Relational DB
 1. Import SQLAlchemy and create a sqllite db
 - This will be our (mini) data warehouse
-1. Create/insert tables with the below schema using 3NF and snowflake principles
+2. Create/insert tables with the below schema using 3NF and snowflake principles
 <a href="https://ibb.co/QfrhW6w"><img src="https://i.ibb.co/SPRHkKC/schema.png" alt="schema" border="0"></a><br /><a target='_blank' href='https://the-crosswordsolver.com/tag/presuppose'></a><br />
 3. In the ETL process, create dataframes which match the schema of the sql database
 4. Open a connection to the database
