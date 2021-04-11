@@ -5,17 +5,17 @@ Is there a correlation between the ESG rating and the stock price for a company?
 
 ### What Does This App Do?
 1. Scrapes ESG data from the [MSCI ESG Ratings Corporate Search Tool](https://www.msci.com/our-solutions/esg-investing/esg-ratings/esg-ratings-corporate-search-tool/issuer/)
-- Using selenium in headless mode with the website being dynamic and the data stored in a SVG
+   - Using selenium in headless mode with the website being dynamic and the data stored in a SVG
 2. Performs transformations on the ESG data to retrieve company ESG scores as well as the corresponding dates those score were given
-- Using regex to filter raw html
+    - Using regex to filter raw html
 3. Grabs historical stock price data for the company
-- Using the yfinance API
+   - Using the yfinance API
 4. Merges the two data sources into a single dataframe
-- Using pandas data manipulation methods
+   - Using pandas data manipulation methods
 5. Plots ESG scores against stock price
-- Using the matplotlib module
+   - Using the matplotlib module
 6. Delivered to the user via a nice(ish), interactable website
-- Using flask to render the html and control GET and POST requests
+   - Using flask to render the html and control GET and POST requests
 
 ### Pre-requisites
 - Python 3
