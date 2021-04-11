@@ -5,7 +5,6 @@ from create_pandas_df import createDF
 from visualisation_engine import visualisationEngine
 
 from flask import Flask, render_template, request
-import requests
 
 app = Flask(__name__)
 
@@ -27,8 +26,8 @@ def my_form_post():
 #     return render_template('simple.html',  tables=[df.to_html(classes='data')], titles=df.columns.values)
 
 def display_data(df):
-    #return render_template("data.html", tables=[df.to_html(classes='data')], titles=df.columns.values)
-    return render_template("data.html", column_names=df.columns.values, row_data=list(df.values.tolist())
+    return render_template("data.html", tables=[df.to_html(classes='data')], titles=df.columns.values)
+    #return render_template("data.html", column_names=df.columns.values, row_data=list(df.values.tolist())
 
 def web_scraper(ticker_symbol):
     data1 = bot(ticker_symbol).initializeScrapeProcess()
